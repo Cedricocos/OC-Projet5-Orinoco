@@ -31,11 +31,14 @@ get("teddies/" + id).then(function(data){
 			const select = document.createElement("select");
 			select.setAttribute("name", "color");
 			select.setAttribute("id", "color-select");
-			data.colors.forEach(element => console.log(element));
+			select.setAttribute("class", "form-control")
+			for (var element of data.colors){
 				const option = document.createElement("option");
-				option.innerHTML = data.colors;
+				option.innerHTML = element;
 				select.appendChild(option);
-			;
+			} 
+			cardB.appendChild(select);
+			
 
 			const p2 = document.createElement("p");
 			p2.innerHTML = data.price / 100 + "€";              //Prix de l'ours
@@ -45,7 +48,9 @@ get("teddies/" + id).then(function(data){
 			a.setAttribute("class", "btn btn-primary mb-2");
 			a.setAttribute("href", "id.html?id=" + data._id);
 			a.innerHTML = "Ajouter au panier"; 
-			a.onclick = function() {localStorage.setItem("dataTeddies", data);};           //Ajout au panier
+			a.addEventListener("click", function() {
+				addCart(data._id);     //Ajout au panier
+			});           
 			card.appendChild(a);
 
 
@@ -57,5 +62,5 @@ get("teddies/" + id).then(function(data){
 
 /*
 localStorage.setItem(data.name, data);
-localStorage.getItem(data.name;
+localStorage.getItem(data.name);
 */

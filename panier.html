@@ -10,6 +10,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1">
 		<script type="text/javascript" src="JS/script.js"></script>
+		<script type="text/javascript" src="JS/cart.js"></script>
 		<title>Panier - Orinoco</title>
 
 	</head>
@@ -62,6 +63,8 @@
 			</div>
 			-->
 
+			<script type="text/javascript" src="JS/panier.js"></script>
+
 		</div>
 		<!---Contenu END---->
 
@@ -70,28 +73,31 @@
 			<div class="card col-lg-6 col-mg-12 center-block">
 				<form class="mt-4 mb-4">
 		            <div class="form-group">
-		              <label for="lnameInput">Nom :</label>
-		              <input type="text" class="form-control" id="lnameInput" placeholder="Nom" required>
+		              <label for="lname">Nom :</label>
+		              <input type="text" class="form-control" id="lname" placeholder="Nom" required>
 		            </div>
 		            <div class="form-group">
-		              <label for="fnameInput">Prénom :</label>
-		              <input type="text" class="form-control" id="fnameInput" placeholder="Prénom" required>
+		              <label for="fname">Prénom :</label>
+		              <input type="text" class="form-control" id="fname" placeholder="Prénom" required>
 		            </div>
 		            <div class="form-group">
-		              <label for="adressInput">Adresse</label>
-		              <input type="text" class="form-control" id="adressInput" placeholder="Adresse" required>
+		              <label for="adress">Adresse</label>
+		              <input type="text" class="form-control" id="adress" placeholder="Adresse" required>
 		            </div>
 		            <div class="form-group">
-		              <label for="cityInput">Ville</label>
-		              <input type="text" class="form-control" id="cityInput" placeholder="Ville" required>
+		              <label for="city">Ville</label>
+		              <input type="text" class="form-control" id="city" placeholder="Ville" required>
 		            </div>
 		            <div class="form-group">
-		              <label for="mailInput">Email</label>
-		              <input type="email" class="form-control" id="mailInput" placeholder="Email" required>
+		              <label for="email">Email</label>
+		              <input type="email" class="form-control" id="email" placeholder="Email" required>
 		            </div>
-		            <button type="submit" class="btn btn-primary">Envoyer</button>
+		            <button type="submit" class="btn btn-primary" id="submit">Envoyer</button>
 		        </form>
 		    </div>
+
+		<script type="text/javascript" src="JS/form.js"></script>
+		
 		</div>
 		<!---Formulaire END---->
 

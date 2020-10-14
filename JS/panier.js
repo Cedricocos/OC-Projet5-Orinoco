@@ -1,4 +1,4 @@
-get("teddies").then(function(data){
+getCart().then(function(data){
 	for (let teddy of data) {
 			const card = document.createElement("div");
 			card.setAttribute("class","card col-lg-12 col-sm-12 mb-3");
