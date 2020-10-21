@@ -17,10 +17,10 @@ function post(api, data) {
 	return new Promise(function(resolve, reject){
 		var request = new XMLHttpRequest();
 		request.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				return resolve(JSON.parse(this.responseText));
-			} else if (this.readyState == 4 && this.status != 200) {
-				reject();
+			if (this.readyState == 4 && this.status == 201) {
+				resolve(JSON.parse(this.responseText));
+			} else if (this.readyState == 4 && this.status != 201) {
+				reject(this.responseText);
 			}
 		}
 		request.open("POST", "http://localhost:3000/api/" + api);
