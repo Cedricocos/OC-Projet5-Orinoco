@@ -1,6 +1,7 @@
 const elt = document.getElementById('submit');
+
    
-elt.addEventListener('click', function() {          
+elt.addEventListener('click', async function() {          
     
 	var inputLName = document.getElementById("lname");
 	var inputFName = document.getElementById("fname");
@@ -8,14 +9,33 @@ elt.addEventListener('click', function() {
 	var inputCity = document.getElementById("city");
 	var inputEmail = document.getElementById("email");
 
-	var user = {
-		name: inputLName.value,
-		fname: inputFName.value,
-		adress: inputAdress.value,
-		city: inputCity.value,
-		email: inputEmail.value
+	var order = {
+		contact: {
+			firstName: inputFName.value,
+   			lastName: inputLName.value,
+  			address: inputAdress.value,
+  			city: inputCity.value,
+   			email: inputEmail.value
+		},
+		products: getCart()
 	};
 
-	localStorage.setItem("user", JSON.stringify(user));
+	var result = await post("teddies/order", order);
+
+	window.location.replace("confirm.html"); 
 
 });
+
+/**
+ *
+ * Expects request to contain:
+ * contact: {
+ *   firstName: string,
+ *   lastName: string,
+ *   address: string,
+ *   city: string,
+ *   email: string
+ * }
+ * products: [string] <-- array of product _id
+ *
+ */

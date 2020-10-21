@@ -1,8 +1,6 @@
 function get(api) {
 	return new Promise(function(resolve, reject){
 		var request = new XMLHttpRequest();
-		request.open("GET", "http://localhost:3000/api/" + api)
-		request.send();
 		request.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				resolve(JSON.parse(this.responseText));
@@ -10,20 +8,23 @@ function get(api) {
 				reject();
 			}
 		}
+		request.open("GET", "http://localhost:3000/api/" + api);
+		request.send();
 	});
 };		
 
-function post() {
+function post(api, data) {
 	return new Promise(function(resolve, reject){
-		var request2 = new XMLHttpRequest();
-		request2.open()
-		request2.send("POST", "http://localhost:3000/api/teddies/order");
+		var request = new XMLHttpRequest();
 		request.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
-				resolve(JSON.parse(this.responseText));
+				return resolve(JSON.parse(this.responseText));
 			} else if (this.readyState == 4 && this.status != 200) {
 				reject();
 			}
 		}
+		request.open("POST", "http://localhost:3000/api/" + api);
+		request.setRequestHeader("Content-Type", "application/json");
+		request.send(JSON.stringify(data));
 	});
 };
