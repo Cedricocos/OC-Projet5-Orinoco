@@ -50,7 +50,7 @@ for (let id of listProduct) {
 	});
 }
 
-setTimeout(totalShow, 100)
+setTimeout(totalShow, 500)
 
 function totalShow(){
 	var totalPrice = document.getElementById("totalPrice");

@@ -7,7 +7,7 @@ for (let id of listProduct) {
 	});
 }
 
-setTimeout(codePrice, 100)
+setTimeout(codePrice, 100);
 
 function codePrice(){
 	var price = document.getElementById("price");
