@@ -6,3 +6,4 @@ Le but était de développer le Frontend d'une application en HTML/CSS et JS per
 de les ajouter au panier et de confirmer la commande à l'aide d'un backend fourni et des routes API à respecter.
 
 Le lien du site est ici : https://cedricocos.github.io/OC-Projet5-Orinoco/
+Le lien du back à lancer avec node server : https://github.com/OpenClassrooms-Student-Center/JWDP5
